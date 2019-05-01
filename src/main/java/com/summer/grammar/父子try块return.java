@@ -2,22 +2,22 @@ package com.summer.grammar;
 
 public class 父子try块return {
 
-    public static void main(String [] args){
-        System.out.println(new B().getValue());
-    }
-    static class A{
-        protected int value;
-        public A(int v) {
+    static class Father {
+        int value;
+
+        Father(int v) {
             setValue(v);
         }
-        public void setValue(int value){
+
+        public void setValue(int value) {
             this.value = value;
         }
-        public int getValue(){
-            try{
+
+        int getValue() {
+            try {
                 value++;
                 return value;
-            } catch(Exception e){
+            } catch (Exception e) {
                 System.out.println(e.toString());
             } finally {
                 this.setValue(value);
@@ -26,13 +26,20 @@ public class 父子try块return {
             return value;
         }
     }
-    static class B extends A{
-        public B() {
+
+    static class Child extends Father {
+        Child() {
             super(5);
             setValue(getValue() - 3);
         }
-        public void setValue(int value){
+
+        @Override
+        public void setValue(int value) {
             super.setValue(2 * value);
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new Child().getValue());
     }
 }

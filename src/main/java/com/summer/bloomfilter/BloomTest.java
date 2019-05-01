@@ -1,4 +1,4 @@
-package com.summer.bloom;
+package com.summer.bloomfilter;
 
 import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
