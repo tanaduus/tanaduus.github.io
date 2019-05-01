@@ -8,7 +8,7 @@
         <version>2.0.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.summer</groupId>
+    <groupId>tanaduus.github.io</groupId>
     <artifactId>summer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>summer</name>
