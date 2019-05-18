@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:aspectj-autoproxy proxy-target-class="false"/>
+    <bean id="myAspect" class="tanaduus.github.io.aop.MyAspect"/>
+
+    <bean id="person" class="tanaduus.github.io.service.single.Person"/>
+
+    <bean id="student" class="tanaduus.github.io.service.depend.Student">
+        <property name="teacher" ref="teacher"/>
+    </bean>
+    <bean id="teacher" class="tanaduus.github.io.service.depend.Teacher"/>
+
+    <bean id="beanPostConfig" class="tanaduus.github.io.config.BeanPostConfig"/>
+
+
+</beans>
