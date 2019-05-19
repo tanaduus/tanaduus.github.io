@@ -7,14 +7,15 @@
     <aop:aspectj-autoproxy proxy-target-class="false"/>
     <bean id="myAspect" class="tanaduus.github.io.aop.MyAspect"/>
 
+    <!--  BeanPostProcessor  -->
+    <bean id="beanPostConfig" class="tanaduus.github.io.config.BeanPostConfig"/>
+
+    <!--  service beans  start  -->
     <bean id="person" class="tanaduus.github.io.service.single.Person"/>
 
     <bean id="student" class="tanaduus.github.io.service.depend.Student">
         <property name="teacher" ref="teacher"/>
     </bean>
     <bean id="teacher" class="tanaduus.github.io.service.depend.Teacher"/>
-
-    <bean id="beanPostConfig" class="tanaduus.github.io.config.BeanPostConfig"/>
-
-
+    <!--  service beans  end  -->
 </beans>
