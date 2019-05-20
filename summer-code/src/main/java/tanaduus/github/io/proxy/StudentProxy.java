@@ -6,6 +6,8 @@ import java.lang.reflect.Proxy;
 public class StudentProxy {
 
     public static void main(String[] args) {
+        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
+
         Person zhansan = new Student("张三");
 
         InvocationHandler stuHandler = new StudentInvocationHandler<Person>(zhansan);

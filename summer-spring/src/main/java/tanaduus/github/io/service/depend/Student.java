@@ -1,7 +1,5 @@
 package tanaduus.github.io.service.depend;
 
-import tanaduus.github.io.aop.MyAnnotation;
-
 public class Student {
 
     private Teacher teacher;
