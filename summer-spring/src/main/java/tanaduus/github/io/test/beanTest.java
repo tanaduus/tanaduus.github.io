@@ -25,6 +25,6 @@ public class beanTest {
 //        person.desc2();
 //        Student student = context.getBean("student", Student.class);
 //        student.learn();
-        context.getBean("factoryBeanImpl", Car.class).dudu();
+//        context.getBean("factoryBeanImpl", Car.class).dudu();
     }
 }

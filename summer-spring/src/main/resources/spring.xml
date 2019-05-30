@@ -12,6 +12,7 @@
 
     <!--  BeanPostProcessor  -->
     <bean id="beanPostProcessorImpl" class="tanaduus.github.io.config.BeanPostProcessorImpl"/>
+    <bean id="beanPostProcessorImpl2" class="tanaduus.github.io.config.BeanPostProcessorImpl2"/>
     <!--  ApplicationContextAware && BeanNameAware  -->
     <bean id="beanAwareImpl" class="tanaduus.github.io.config.BeanAwareImpl"/>
     <!--  BeanDefinitionRegistryPostProcessor  -->
