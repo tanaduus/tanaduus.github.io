@@ -48,5 +48,18 @@
             <artifactId>hystrix-core</artifactId>
             <version>1.5.8</version>
         </dependency>
+
+        <!-- 如使用JSR 303 - Bean Validation校验框架，在pom.xml中加入 -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.3.6.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.el</artifactId>
+            <version>3.0.1-b08</version>
+        </dependency>
     </dependencies>
 </project>

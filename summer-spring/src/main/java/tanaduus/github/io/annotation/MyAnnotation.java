@@ -1,4 +1,4 @@
-package tanaduus.github.io.aop;
+package tanaduus.github.io.annotation;
 
 import java.lang.annotation.*;
 

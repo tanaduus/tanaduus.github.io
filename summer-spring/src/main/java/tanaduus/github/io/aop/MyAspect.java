@@ -3,6 +3,7 @@ package tanaduus.github.io.aop;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import tanaduus.github.io.annotation.MyAnnotation;
 
 @Aspect
 public class MyAspect {

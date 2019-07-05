@@ -1,6 +1,6 @@
 package tanaduus.github.io.service.single;
 
-import tanaduus.github.io.aop.MyAnnotation;
+import tanaduus.github.io.annotation.MyAnnotation;
 
 public class Person implements IPerson{
 
