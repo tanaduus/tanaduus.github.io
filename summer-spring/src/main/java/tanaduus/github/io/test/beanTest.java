@@ -6,6 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import tanaduus.github.io.service.eventbus.EventBusCenter;
 import tanaduus.github.io.service.eventbus.OrderChangeEvent;
 import tanaduus.github.io.service.eventbus.OrderCreateEvent;
+import tanaduus.github.io.service.single.IPerson;
 
 @Slf4j
 public class beanTest {
@@ -17,15 +18,15 @@ public class beanTest {
         log.info(">>>>>> spring context start ... ...");
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         log.info(">>>>>> spring context started");
-//        IPerson person = context.getBean("person", IPerson.class);
-//        person.desc("夏");
-//        person.desc2();
+        IPerson person = context.getBean("person", IPerson.class);
+        person.desc("夏");
+        person.desc2();
 //        Student student = context.getBean("student", Student.class);
 //        student.learn();
 //        context.getBean("factoryBeanImpl", Car.class).dudu();
-        EventBusCenter eventBusCenter = context.getBean("eventBusCenter", EventBusCenter.class);
-
-        eventBusCenter.postSync(new OrderCreateEvent());
-        eventBusCenter.postSync(new OrderChangeEvent());
+//        EventBusCenter eventBusCenter = context.getBean("eventBusCenter", EventBusCenter.class);
+//
+//        eventBusCenter.postSync(new OrderCreateEvent());
+//        eventBusCenter.postSync(new OrderChangeEvent());
     }
 }

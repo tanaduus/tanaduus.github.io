@@ -61,5 +61,12 @@
             <artifactId>javax.el</artifactId>
             <version>3.0.1-b08</version>
         </dependency>
+
+        <!-- 对象池 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>2.6.2</version>
+        </dependency>
     </dependencies>
 </project>

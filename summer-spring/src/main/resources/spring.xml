@@ -6,29 +6,29 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--  <tx:annotation-driven transaction-manager="transactionManager" -->
-    <aop:aspectj-autoproxy proxy-target-class="false"/>
-    <bean id="myAspect" class="tanaduus.github.io.aop.MyAspect"/>
+<!--    <aop:aspectj-autoproxy proxy-target-class="false"/>-->
+<!--    <bean id="myAspect" class="tanaduus.github.io.aop.MyAspect"/>-->
 
-    <context:component-scan base-package="tanaduus.github.io"/>
+<!--    <context:component-scan base-package="tanaduus.github.io"/>-->
 
     <!--  BeanPostProcessor  -->
-    <bean id="beanPostProcessorImpl" class="tanaduus.github.io.config.BeanPostProcessorImpl"/>
-    <bean id="beanPostProcessorImpl2" class="tanaduus.github.io.config.BeanPostProcessorImpl2"/>
+<!--    <bean id="beanPostProcessorImpl" class="tanaduus.github.io.config.BeanPostProcessorImpl"/>-->
+<!--    <bean id="beanPostProcessorImpl2" class="tanaduus.github.io.config.BeanPostProcessorImpl2"/>-->
     <!--  ApplicationContextAware && BeanNameAware  -->
-    <bean id="beanAwareImpl" class="tanaduus.github.io.config.BeanAwareImpl"/>
+<!--    <bean id="beanAwareImpl" class="tanaduus.github.io.config.BeanAwareImpl"/>-->
     <!--  BeanDefinitionRegistryPostProcessor  -->
-    <bean id="beanRegistryImpl" class="tanaduus.github.io.config.BeanRegistryImpl"/>
+<!--    <bean id="beanRegistryImpl" class="tanaduus.github.io.config.BeanRegistryImpl"/>-->
     <!--  FactoryBean  -->
-    <bean id="factoryBeanImpl" class="tanaduus.github.io.config.FactoryBeanImpl"/>
+<!--    <bean id="factoryBeanImpl" class="tanaduus.github.io.config.FactoryBeanImpl"/>-->
 
 
 
     <!--  service beans  start  -->
     <bean id="person" class="tanaduus.github.io.service.single.Person"/>
 
-    <bean id="student" class="tanaduus.github.io.service.depend.Student">
-        <property name="teacher" ref="teacher"/>
-    </bean>
-    <bean id="teacher" class="tanaduus.github.io.service.depend.Teacher"/>
+<!--    <bean id="student" class="tanaduus.github.io.service.depend.Student">-->
+<!--        <property name="teacher" ref="teacher"/>-->
+<!--    </bean>-->
+<!--    <bean id="teacher" class="tanaduus.github.io.service.depend.Teacher"/>-->
     <!--  service beans  end  -->
 </beans>
