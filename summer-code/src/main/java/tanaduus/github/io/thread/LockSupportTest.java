@@ -1,5 +1,7 @@
 package tanaduus.github.io.thread;
 
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
 
@@ -7,7 +9,7 @@ public class LockSupportTest {
 
     public static void main(String[] args) throws InterruptedException {
 
-        test2();
+        test3();
     }
 
     static void test2() throws InterruptedException {
@@ -39,5 +41,26 @@ public class LockSupportTest {
         });
 
         t2.start();
+    }
+
+    static void test3(){
+        BlockingQueue<String> blockingQueue = new LinkedBlockingQueue<>(1);
+        try {
+            blockingQueue.put("a");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        Thread t3 = new Thread(()->{
+            try {
+                blockingQueue.put("a");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        t3.start();
+
+        t3.interrupt();
     }
 }

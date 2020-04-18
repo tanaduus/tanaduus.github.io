@@ -23,7 +23,6 @@ public class InterruptTest {
                         System.out.println("wake up");
                     } catch (InterruptedException e) {
                         System.out.println("t1:"+Thread.currentThread().isInterrupted());
-                        System.out.println("t1 this:"+this.isInterrupted());
                         e.printStackTrace();
 //                        Thread.currentThread().interrupt();
                     }
