@@ -1,19 +1,40 @@
 package tanaduus.github.io.nio.io;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Client {
 
-    public static void main(String[] args) throws IOException, InterruptedException {
-        Socket socket = new Socket("148.70.72.81", 8899);
+    public static void main(String[] args) throws IOException {
+        Socket sock = new Socket("localhost", 6666); // 连接指定服务器和端口
+        try (InputStream input = sock.getInputStream()) {
+            try (OutputStream output = sock.getOutputStream()) {
+                handle(input, output);
+            }
+        }
+        sock.close();
+        System.out.println("disconnected.");
+    }
 
-        TimeUnit.SECONDS.sleep(10);
-        socket.close();
-
-        while(true){
-
+    private static void handle(InputStream input, OutputStream output) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output, StandardCharsets.UTF_8));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8));
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("[server] " + reader.readLine());
+        for (;;) {
+            System.out.print(">>> "); // 打印提示
+            String s = scanner.nextLine(); // 读取一行输入
+            writer.write(s);
+            writer.newLine();
+            writer.flush();
+            String resp = reader.readLine();
+            System.out.println("<<< " + resp);
+            if (resp.equals("bye")) {
+                break;
+            }
         }
     }
 }
