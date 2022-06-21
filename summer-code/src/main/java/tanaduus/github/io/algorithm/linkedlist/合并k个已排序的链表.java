@@ -1,4 +1,4 @@
-package tanaduus.github.io.algorithm.jianzhi;
+package tanaduus.github.io.algorithm.linkedlist;
 
 import java.util.ArrayList;
 import java.util.Comparator;

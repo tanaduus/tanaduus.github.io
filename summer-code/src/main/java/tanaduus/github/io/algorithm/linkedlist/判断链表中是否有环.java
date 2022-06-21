@@ -1,9 +1,6 @@
-package tanaduus.github.io.algorithm.jianzhi;
+package tanaduus.github.io.algorithm.linkedlist;
 
 import java.util.HashSet;
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.TreeSet;
 
 /**
  * @author 夏冬

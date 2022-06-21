@@ -1,4 +1,4 @@
-package tanaduus.github.io.algorithm.jianzhi;
+package tanaduus.github.io.algorithm.linkedlist;
 
 /**
  * @author 夏冬
