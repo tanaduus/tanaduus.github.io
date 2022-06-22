@@ -6,10 +6,24 @@ package tanaduus.github.io.algorithm.linkedlist;
  */
 public class 删除有序链表中重复的元素1 {
 
-    public ListNode deleteDuplicates (ListNode head) {
+    public ListNode deleteDuplicates(ListNode head) {
 
+        if (head == null || head.next == null) {
+            return head;
+        }
 
+        ListNode temp = head;
 
-        return null;
+        while (temp != null && temp.next != null) {
+
+            if (temp.val == temp.next.val) {
+                temp.next = temp.next.next;
+
+            } else {
+                temp = temp.next;
+            }
+        }
+
+        return head;
     }
 }
