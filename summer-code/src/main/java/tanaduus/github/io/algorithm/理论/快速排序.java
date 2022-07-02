@@ -1,5 +1,8 @@
 package tanaduus.github.io.algorithm.理论;
 
+/**
+ * 快速排序的精髓在于原地排序，有空重写partition函数
+ */
 public class 快速排序 {
 
     /**
