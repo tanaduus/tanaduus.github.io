@@ -11,6 +11,7 @@
     <modules>
         <module>summer-code</module>
         <module>summer-spring</module>
+        <module>summer-dubbo</module>
     </modules>
 
     <properties>

@@ -1,0 +1,2 @@
+customExceptionFilter=tanaduus.github.io.CustomExceptionFilter
+dubboServiceLogFilter=tanaduus.github.io.DubboServiceLogFilter
