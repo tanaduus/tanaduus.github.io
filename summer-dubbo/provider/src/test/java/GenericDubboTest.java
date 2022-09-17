@@ -38,7 +38,7 @@ public class GenericDubboTest {
         reference.setGeneric("true");
         reference.setInterface("tanaduus.github.io.ISummerProvider");
         reference.setVersion("1.0");
-        reference.setUrl("dubbo://127.0.0.1:20881/tanaduus.github.io.ISummerProvider");
+        reference.setUrl("dubbo://127.0.0.1:20880/tanaduus.github.io.ISummerProvider");
 
         // 获取GenericService，代替
         ReferenceConfigCache cache = ReferenceConfigCache.getCache();
