@@ -19,7 +19,7 @@ public class SummerConsumer {
 
         SummerReq req = new SummerReq();
         req.setId(1);
-//        req.setName("summer");
+        req.setName("summer");
 
         BaseResult<SummerResp> result = iSummerProvider.call(req);
         System.out.println("##结果："+ JSON.toJSONString(result));

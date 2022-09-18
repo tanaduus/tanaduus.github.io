@@ -11,6 +11,7 @@
     </parent>
 
     <artifactId>provider</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -56,6 +57,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
