@@ -46,21 +46,49 @@
 // Related Topics 数学 👍 2217 👎 0
 
 package tanaduus.github.io.algorithm.leetcode.editor.cn;
+
 /**
-  * 题目Id：9
-  * 题目：回文数
-  * 日期：2022-09-23 23:38:02
-*/
+ * 题目Id：9
+ * 题目：回文数
+ * 日期：2022-09-23 23:38:02
+ */
 public class PalindromeNumber {
     public static void main(String[] args) {
         Solution solution = new PalindromeNumber().new Solution();
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isPalindrome(int x) {
 
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public boolean isPalindrome(int x) {
+
+            if (x < 0) {
+                return false;
+            }
+
+            if (x < 10) {
+                return true;
+            }
+
+            byte[] bytes = String.valueOf(x).getBytes();
+
+            int length = bytes.length;
+            for (int i = 0, j = length - 1; i < length; ) {
+
+                if (i >= j) {
+                    break;
+                }
+                
+                if (bytes[i] == bytes[j]) {
+                    i++;
+                    j--;
+                } else {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 } 

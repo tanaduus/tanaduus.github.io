@@ -48,21 +48,50 @@
 // Related Topics 数组 前缀和 👍 97 👎 0
 
 package tanaduus.github.io.algorithm.leetcode.editor.cn;
+
 /**
-  * 题目Id：1413
-  * 题目：逐步求和得到正数的最小值
-  * 日期：2022-09-23 23:09:07
-*/
+ * 题目Id：1413
+ * 题目：逐步求和得到正数的最小值
+ * 日期：2022-09-23 23:09:07
+ */
 public class MinimumValueToGetPositiveStepByStepSum {
     public static void main(String[] args) {
         Solution solution = new MinimumValueToGetPositiveStepByStepSum().new Solution();
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int minStartValue(int[] nums) {
 
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int minStartValue(int[] nums) {
+
+            if (nums == null || nums.length == 0) {
+                return 0;
+            }
+
+            int startValue, val;
+            if (1 - nums[0] <= 0) {
+                startValue = 1;
+                val = startValue;
+            } else {
+                startValue = 1 - nums[0];
+                val = startValue;
+            }
+            int i = 0;
+            while (i < nums.length) {
+
+                val = val + nums[i];
+
+                if (val >= 1) {
+                    i++;
+                } else {
+                    startValue++;
+                    val = startValue;
+                    i = 0;
+                }
+            }
+
+            return startValue;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 } 

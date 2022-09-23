@@ -44,21 +44,73 @@
 // Related Topics 数组 哈希表 👍 15402 👎 0
 
 package tanaduus.github.io.algorithm.leetcode.editor.cn;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
-  * 题目Id：1
-  * 题目：两数之和
-  * 日期：2022-09-23 23:11:28
-*/
+ * 题目Id：1
+ * 题目：两数之和
+ * 日期：2022-09-23 23:11:28
+ */
 public class TwoSum {
     public static void main(String[] args) {
         Solution solution = new TwoSum().new Solution();
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] twoSum(int[] nums, int target) {
 
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+
+        /**
+         * 一次遍历，每次计算map中是否已存在所需值
+         */
+        public int[] twoSum(int[] nums, int target) {
+            Map<Integer, Integer> hashtable = new HashMap<Integer, Integer>();
+            for (int i = 0; i < nums.length; ++i) {
+                if (hashtable.containsKey(target - nums[i])) {
+                    return new int[]{hashtable.get(target - nums[i]), i};
+                }
+                hashtable.put(nums[i], i);
+            }
+            return new int[0];
+        }
+
+//        public int[] twoSum(int[] nums, int target) {
+//
+//            if (null == nums || nums.length == 0) {
+//                return null;
+//            }
+//
+//            //<value, index>
+//            HashMap<Integer, List<Integer>> map = new HashMap<>();
+//            for (int i = 0; i < nums.length; i++) {
+//                List<Integer> list = map.get(nums[i]);
+//                if (list == null) {
+//                    list = new ArrayList<>();
+//                    list.add(i);
+//                    map.put(nums[i], list);
+//                } else {
+//                    list.add(i);
+//                }
+//            }
+//
+//            for (Map.Entry<Integer, List<Integer>> entry : map.entrySet()) {
+//                Integer value = entry.getKey();
+//                int another = target - value;
+//                List<Integer> indexList = entry.getValue();
+//
+//                if (map.containsKey(another)) {
+//
+//                    if (value == another) {
+//                        return new int[]{indexList.get(0), indexList.get(1)};
+//                    } else {
+//                        return new int[]{indexList.get(0), map.get(another).get(0)};
+//                    }
+//                }
+//            }
+//            return null;
+//        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 } 
