@@ -1,0 +1,55 @@
+# 最长公共前缀
+
+## 解法一 暴力双循环
+
+**思路：遍历strs，比较strs中每一项和第一项strs[0]中公共最长前缀**
+
+* 
+
+```
+var longestCommonPrefix = function(strs) {
+  let result = "";
+  if (!strs.length) {
+    return result;
+  }
+  for (let i = 0; i < strs[0].length; i++) {
+    for (let j = 1; j < strs.length; j++) {
+      if (strs[0][i] !== strs[j][i]) {
+        return result;
+      }
+    }
+    result += strs[0][i];
+  }
+  return result;
+};
+```
+
+## 解法二 递归迭代
+
+**思路：查找 n 个字符串的最长公共前缀**
+1. 假设strs数组中第一个字符串strs[0]为公共前缀
+2. 将公共前缀前缀与下一个字符串strs[1]进行比较，得到最新的公共前缀
+3. 重复第二步操作，遍历数组最后得到的strs数组中所有字符串的最长公共前缀
+
+* 
+
+```
+var longestCommonPrefix = function(strs) {
+  if (!strs.length) {
+    return "";
+  }
+  function findCommonPrefix(a, b) {
+    let i = 0;
+    while (i < a.length && i < b.length && a[i] === b[i]) {
+      i++;
+    }
+    return i > 0 ? a.substring(0, i) : "";
+  }
+  let result = strs[0];
+  for (let i = 1; i < strs.length; i++) {
+    result = findCommonPrefix(result, result);
+  }
+  return result;
+};
+```
+

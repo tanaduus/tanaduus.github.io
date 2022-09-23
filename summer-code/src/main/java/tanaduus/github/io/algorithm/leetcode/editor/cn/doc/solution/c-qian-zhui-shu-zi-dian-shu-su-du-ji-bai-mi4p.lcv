@@ -1,0 +1,78 @@
+看到了热评有大佬提出使用前缀树（字典树）解决本题，有些迫不及待，但是具体实现起来并不简单，蛮多细节需要考虑。各位兄弟们不要看代码貌似很多（主要因为注释多了），但其实思路很简单。
+
+![image.png](https://pic.leetcode-cn.com/1621802499-OmrHUF-image.png)
+
+* 
+
+```
+//Trie字典树，包含指向接下来26个英文字母的一个指针集合children和多少个字符串经过该节点
+class Trie{
+public:
+    Trie* children[26] = {};
+    int count = 0;
+    Trie() { }
+
+    // insert，将字符串加入前缀树
+    void insert(string str)
+    {
+        Trie* root = this;
+        for(char ch : str)
+        {
+            root->count++;
+            int nextIndex = ch - 'a';
+            if(root->children[nextIndex] == nullptr)
+            {
+                root->children[nextIndex] = new Trie();
+            }
+            root = root->children[nextIndex];
+        }
+    }
+};
+
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+        int length = strs.size();
+        if(length == 0) return "";
+        Trie* root = new Trie();
+        // 将所有字符串依次加入前缀树
+        for(string str : strs)
+        {
+            root->insert(str);
+        }
+        return findMax(root, "", length);
+    }
+
+    // s表示找最大值的时候当前表示的字符串，length表示给定数组strs的数组
+    string findMax(Trie* root, string s, int length)
+    {
+        int countForDiv = 0;
+        int divIndex = -1;
+        for(int i = 0; i < 26; i++)
+        {
+            if(root->children[i])
+            {   
+                // 记录当前节点有多少个分岔
+                countForDiv++;
+                // 记录分岔的字符
+                divIndex = i;
+            }
+        }
+        /* 
+            如果分岔数为1，那么记录的divIndex就是分岔的字符。
+            如果同时满足经过当前节点的string个数和总共有的数组中字符串的个数相同，
+            则说明该节点符合要求，可以继续遍历字典树
+        */
+        if(countForDiv == 1 && root->count == length) 
+        {
+            // 加上当前节点所代表的字母
+            s += ('a' + divIndex);
+            //继续遍历
+            return findMax(root->children[divIndex], s, length);
+        }
+        return s;
+    }
+
+};
+```
+
