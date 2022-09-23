@@ -1,0 +1,11 @@
+![WX20210304-202056@2x.png](https://pic.leetcode-cn.com/1614860470-rGdujc-WX20210304-202056@2x.png)
+
+### 代码
+
+* bash
+
+```bash
+# Read from the file file.txt and output the tenth line to stdout.
+sed -n "10p" file.txt
+```
+
