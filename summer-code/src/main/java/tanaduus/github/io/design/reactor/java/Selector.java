@@ -1,4 +1,4 @@
-package tanaduus.github.io.design.reactor模式.java;
+package tanaduus.github.io.design.reactor.java;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;

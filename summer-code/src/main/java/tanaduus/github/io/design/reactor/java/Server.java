@@ -1,4 +1,4 @@
-package tanaduus.github.io.design.reactor模式.java;
+package tanaduus.github.io.design.reactor.java;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
