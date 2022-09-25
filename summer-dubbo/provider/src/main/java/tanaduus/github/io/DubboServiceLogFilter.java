@@ -6,13 +6,6 @@ import org.apache.dubbo.common.constants.CommonConstants;
 import org.apache.dubbo.common.extension.Activate;
 import org.apache.dubbo.rpc.*;
 
-/**
- * dubbo 服务日志过滤器
- *
- * @author fanlinsheng
- * @version 1.0.0
- * @date 2022年07月26日 11:58:00
- */
 @Slf4j
 @Activate(group = {CommonConstants.PROVIDER, CommonConstants.CONSUMER}, order = 50)
 public class DubboServiceLogFilter implements Filter {
