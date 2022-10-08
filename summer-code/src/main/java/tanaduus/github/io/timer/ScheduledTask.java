@@ -19,7 +19,7 @@ public class ScheduledTask {
      * 1.构造器的同步延迟队列DelayedWorkQueue（小顶堆）
      * 2.发布任务时，将其包装成一个DelayedWorkQueue的元素RunnableScheduledFuture
      * 3.线程池开始消费，从DelayedWorkQueue拉取任务
-     * 4.拉到的任务判断时间后执行或挂起指定时间
+     * 4.DelayedWorkQueue的poll方法会对顶部任务判断时间后返回或挂起指定时间
      * <p>
      * todo 如何实现周期性定时任务呢，简单来说就是任务执行完之后，修改一下延迟时间，重新丢进去任务池
      */
