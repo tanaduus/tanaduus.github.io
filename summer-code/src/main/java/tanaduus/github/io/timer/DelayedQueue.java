@@ -24,7 +24,7 @@ public class DelayedQueue<T extends DelayedTask> {
 
             T first = this.priorityQueue.peek();
             if (first == null) {
-                return null;//引入同步器做线程挂起
+                return null;//这里可以引入同步器做线程挂起，或着busy loop
             }
 
             if (System.currentTimeMillis() >= first.getExecuteTime()) {
